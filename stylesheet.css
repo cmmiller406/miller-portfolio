@@ -1,5 +1,11 @@
 @charset "UTF-8"
 
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
 body {
 	background-color: ivory;
 }
@@ -11,6 +17,7 @@ h1 {
 	font-family: 'Playfair Display', serif;
 	padding: 5px;
 }
+
 h2 {
 	color: ivory;
 	background-color: teal;
@@ -32,18 +39,53 @@ p, li {
 	font-family: 'Sumana', serif;
 }
 
-.topnav {
+.navbar {
 	background-color: teal;
-	overflow: hidden;
 	display: flex;
 	justify-content: flex-end;
-	flex-wrap: wrap;
+}
+
+.main-nav {
+	list-style-type: none;
+	margin-right: 30px;
+	display: flex;
+	flex-direction: row;
+}
+
+.main-nav li {
+	text-align: center;
+	margin: 0;
+}
+
+.greeting {
+	color: ivory;
+	display: inline-block;
+	font-size: 60px;
+	margin-top: 0px;
+	margin-left: 20px;
+	margin-bottom: 0px;
+	align-text: center;
+}
+	
+.nav-links:hover {
+	background-color: ivory;
+	color: teal;
+}
+
+.nav-links {
+	float: right;
+	color: ivory;
+	text-align: right;
+	padding: 8px 10px;
+	text-decoration: none;
+	font-family: 'Sumana', serif;
+	font-size: 18px;
 }
 
 .images-container {
 	display: flex;
 	justify-content: space-around;
-	flex-wrap: wrap;
+	padding: 20px;
 }
 
 form {
@@ -76,19 +118,9 @@ textarea {
 	height: 5em;
 }
 
-.topnav a{
-	float: right;
-	color: ivory;
-	text-align: right;
-	padding: 8px 10px;
-	text-decoration: none;
-	font-family: 'Sumana', serif;
-	font-size: 18px;
-}
-
-a:hover {
+#profile:hover {
 	background-color: ivory;
-	color: black;
+	color: teal;
 }
 
 input[type=text], textarea{
@@ -99,11 +131,33 @@ input[type=text], textarea{
 }
 
 @media screen and (max-width: 768px) {
-	main {
+	.navbar {
 		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
 	}
-	.topnav {
+	
+	.nav-links {
 		flex-direction: column;
-		justify-content: left;
+		justify-content: flex-start;
+		align-items: flex-start;
 	}
-}
+	
+	.greeting {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.main-nav {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	
+	.images-container {
+		flex-direction: column;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		align-items: center;
+	}
